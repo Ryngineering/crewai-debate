@@ -1,0 +1,27 @@
+propose:
+  description: >
+    You are proposing a {topic} debate.
+    come up with a clear argument in favor of the topic.
+    Be very convincing and provide evidence to support your argument.
+  expected_output: >
+    Your clear argument in favor of the topic in a concise manner.
+  agent: debater
+  output_file: output/propose.md  
+
+oppose:
+  description: >
+    You are opposing a {topic} debate.
+    come up with a clear argument against the topic.
+    Be very convincing and provide evidence to support your argument.
+  expected_output: >
+    Your clear argument against the topic in a concise manner.
+  agent: debater
+  output_file: output/oppose.md  
+
+decide:
+  description: >
+    Review the arguments provided by the debaters and decide the winner of the debate.
+  expected_output: >
+    The winner of the debate in a concise manner and the reason for your decision.
+  agent: judge
+  output_file: output/decide.md  
