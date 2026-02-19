@@ -1,0 +1,41 @@
+find_trending_companies:
+  description: >
+    Task to find top trending companies in the news in {sector } by searching the latest articles and reports.
+    Find the top trending companies in the market for future research that you have not researched before. Always pick the companies that are likely to be trending in the future and make sure not to pick the same company twice.
+  expected_output: >
+    Find 3-4 trending companies in the {sector } for future research.
+    Always pick the companies that are likely to be trending in the future and make sure not to pick the same company twice.
+    A list of 3-4 trending companies in the {sector } for future research.
+  agent: trending_company_finder
+  output_file: output/trending_companies.json
+
+research_trending_companies:
+  description: >
+    Task to conduct in-depth research on the trending companies provided by the find_trending_companies task.
+    Analyze the financial statements, market trends, and other relevant data to provide a comprehensive report on the company's performance and future prospects.
+    Your report should include a detailed analysis of the company's financial health, competitive position, and growth potential.
+  expected_output: >
+    Conduct in-depth research on the companies provided by the find_trending_companies task.
+    Analyze the financial statements, market trends, and other relevant data to provide a comprehensive report on the company's performance and future prospects.
+    Your report should include a detailed analysis of the company's financial health, competitive position, and growth potential.
+    A comprehensive report on each of the trending companies provided by the find_trending_companies task, including an analysis of their financial health, competitive position, and growth potential.
+  agent: financial_researcher
+  context: 
+   - find_trending_companies
+  output_file: output/research_reports.json
+
+pick_best_stocks:
+  description: >
+    Task to select the best stocks based on the research provided by the research_trending_companies task.
+    Analyze the research reports and select the stocks that have the highest potential for growth and profitability.
+    Your stock picks should be based on a thorough analysis of the company's financial health, competitive position, and growth potential.
+  expected_output: >
+    Select the best stocks based on the research provided by the research_trending_companies task.
+    Analyze the research reports and select the stocks that have the highest potential for growth and profitability.
+    Your stock picks should be based on a thorough analysis of the company's financial health, competitive position, and growth potential.
+    A list of stocks that have been selected based on the research provided by the research_trending_companies task, along with a rationale for each selection.
+    Send a push notification with the selected stocks and their rationale.
+  agent: stock_picker
+  context:
+   - research_trending_companies
+  output_file: output/stock_picks.json
