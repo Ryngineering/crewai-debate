@@ -1,0 +1,12 @@
+coding_task:
+  description: >
+    You will be given a coding assignment that requires you to write efficient and clean Python code.
+    Your task is to implement a solution based on the requirements provided in the assignment.
+    Your assignment is as follows: {assignment}.
+  expected_output: >
+    The expected output is a Python code implementation that meets the requirements of the assignment.
+    Your code should be well-structured, efficient, and easy to understand. It should also include
+    comments where necessary to explain your logic and approach.
+    The output should be in a text file format, and it should be ready to run without any errors.
+  agent: coder
+  output_file: output/code.py
